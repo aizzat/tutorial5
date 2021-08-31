@@ -28,3 +28,9 @@ target_link_libraries(service_server_p ${catkin_LIBRARIES})
 add_executable(service_client_p src/service_client_p.cpp)
 add_dependencies(service_client_p ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(service_client_p ${catkin_LIBRARIES})
+
+install( TARGETS
+    service_server_p
+    service_client_p
+    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
